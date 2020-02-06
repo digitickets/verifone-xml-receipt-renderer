@@ -9,7 +9,11 @@ table.verifone-receipt * {
 
 table.verifone-receipt {
     width: 100%;
-    font-family: ;
+    font-family: "Courier", monospace;
+}
+
+table.verifone-receipt td {
+    padding: 1px 0;
 }
 
 table.verifone-receipt td:first-child {
@@ -23,6 +27,11 @@ table.verifone-receipt td:last-child {
 table.verifone-receipt td:first-child:last-child {
     text-align: center;
 }
+
+table.verifone-receipt hr {
+    margin: 5px 0;
+    border-style: dashed;
+}
 </style>
 
 <table class="verifone-receipt">
@@ -31,98 +40,126 @@ table.verifone-receipt td:first-child:last-child {
             <td colspan="2">*** CARDHOLDER COPY ***</td>
         </tr>
 
+
         <tr>
             <td colspan="2">BARCLAYS 3401 Industrial Road Las Vegas NV. 89109</td>
         </tr>
 
+    <tr>
+        <td colspan="2">
+            <hr/>
+        </td>
+    </tr>
 
         <tr>
-            <td>Amount</td>
-            <td>10.00</td>
-        </tr>
-
-
-        <tr>
-            <td>AuthCode</td>
-            <td>10775</td>
-        </tr>
-
-        <tr>
-            <td>CaptureMethod</td>
-            <td>Swiped</td>
-        </tr>
-
-        <tr>
-            <td>CardScheme</td>
             <td>VI Debit UK</td>
-        </tr>
-
-
-        <tr>
-            <td>CurrencySymbol</td>
-            <td>£</td>
+            <td></td>
         </tr>
 
         <tr>
-            <td>CustomerPresent</td>
-            <td>1</td>
-        </tr>
-
-        <tr>
-            <td>CVM</td>
-            <td>SIGNATURE VERIFIED</td>
-        </tr>
-
-        <tr>
-            <td>ExpiryDate</td>
-            <td>0317</td>
-        </tr>
-
-
-        <tr>
-            <td>MID</td>
-            <td>**51939</td>
-        </tr>
-
-        <tr>
-            <td>PAN</td>
             <td>453979******0106</td>
+            <td></td>
         </tr>
 
         <tr>
-            <td>PTID</td>
+            <td>Expiry:</td>
+            <td>03&#x2F;17</td>
+        </tr>
+
+
+        <tr>
+            <td>Refund</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>Swiped</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">Please debit my account</td>
+        </tr>
+
+        <tr>
+            <td>Amount:</td>
+            <td>£10.00</td>
+        </tr>
+
+        <tr>
+            <td><strong>TOTAL:</strong></td>
+            <td><strong>£10.00</strong></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">SIGNATURE VERIFIED</td>
+        </tr>
+
+        <tr>
+            <td colspan="2">Please keep receipt</td>
+        </tr>
+
+        <tr>
+            <td colspan="2">for your records</td>
+        </tr>
+
+        <tr>
+            <td>PTID:</td>
             <td>88469272</td>
         </tr>
 
         <tr>
-            <td>TID</td>
+            <td>MID:</td>
+            <td>**51939</td>
+        </tr>
+
+        <tr>
+            <td>TID:</td>
             <td>* 2016-09-29 12:36:21 - RX: ****7592</td>
         </tr>
 
         <tr>
-            <td>Reference</td>
+            <td>Date / Time:</td>
+            <td>2016-09-29 12:31:37</td>
+        </tr>
+
+        <tr>
+            <td>EFTSN:</td>
+            <td>0077</td>
+        </tr>
+
+    <tr>
+        <td colspan="2">
+            <hr/>
+        </td>
+    </tr>
+
+        <tr>
+            <td>Authcode:</td>
+            <td>10775</td>
+        </tr>
+
+        <tr>
+            <td>Ref:</td>
             <td>CP-REFUND</td>
         </tr>
 
-        <tr>
-            <td>Total</td>
-            <td>10.00</td>
-        </tr>
 
-        <tr>
-            <td>TxnType</td>
-            <td>Refund</td>
-        </tr>
 
-        <tr>
-            <td>KeepText1</td>
-            <td>Please keep receipt</td>
-        </tr>
 
+
+    <!--
         <tr>
-            <td>KeepText2</td>
-            <td>for your records</td>
+            <td>CustomerPresent</td>
+            <td>1</td>
         </tr>
+    -->
+
+    <tr>
+        <td colspan="2">
+            <hr/>
+        </td>
+    </tr>
 
         <tr>
             <td colspan="2">Base Config Server</td>

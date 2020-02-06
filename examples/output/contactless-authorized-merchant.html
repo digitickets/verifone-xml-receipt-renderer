@@ -9,7 +9,11 @@ table.verifone-receipt * {
 
 table.verifone-receipt {
     width: 100%;
-    font-family: ;
+    font-family: "Courier", monospace;
+}
+
+table.verifone-receipt td {
+    padding: 1px 0;
 }
 
 table.verifone-receipt td:first-child {
@@ -23,6 +27,11 @@ table.verifone-receipt td:last-child {
 table.verifone-receipt td:first-child:last-child {
     text-align: center;
 }
+
+table.verifone-receipt hr {
+    margin: 5px 0;
+    border-style: dashed;
+}
 </style>
 
 <table class="verifone-receipt">
@@ -31,106 +40,138 @@ table.verifone-receipt td:first-child:last-child {
         </tr>
 
 
+
         <tr>
             <td colspan="2">BARCLAYS 3401 Industrial Road Las Vegas NV. 89109</td>
         </tr>
 
-        <tr>
-            <td>AID</td>
-            <td>A0000000041010</td>
-        </tr>
+    <tr>
+        <td colspan="2">
+            <hr/>
+        </td>
+    </tr>
 
         <tr>
-            <td>Amount</td>
-            <td>10.00</td>
-        </tr>
-
-        <tr>
-            <td>AppSeq</td>
-            <td>01</td>
-        </tr>
-
-        <tr>
-            <td>AuthCode</td>
-            <td>10027</td>
-        </tr>
-
-        <tr>
-            <td>CaptureMethod</td>
-            <td>Contacless EMV</td>
-        </tr>
-
-        <tr>
-            <td>CardScheme</td>
             <td>PPC MCD 04 v2 2</td>
-        </tr>
-
-
-        <tr>
-            <td>CurrencySymbol</td>
-            <td>£</td>
+            <td></td>
         </tr>
 
         <tr>
-            <td>CustomerPresent</td>
-            <td>1</td>
+            <td>541333******0044</td>
+            <td></td>
         </tr>
 
         <tr>
-            <td>CVM</td>
-            <td>NO CARDHOLDER VERIFICATION</td>
+            <td>Expiry:</td>
+            <td>12&#x2F;25</td>
         </tr>
 
         <tr>
-            <td>ExpiryDate</td>
-            <td>1225</td>
-        </tr>
-
-        <tr>
-            <td>IssueNo</td>
+            <td>Issue No:</td>
             <td>01</td>
         </tr>
 
         <tr>
-            <td>MID</td>
-            <td>6651939</td>
+            <td>Sale</td>
+            <td></td>
         </tr>
 
         <tr>
-            <td>PAN</td>
-            <td>541333******0044</td>
+            <td>Contacless EMV</td>
+            <td></td>
         </tr>
 
         <tr>
-            <td>PTID</td>
+            <td colspan="2">Please debit my account</td>
+        </tr>
+
+        <tr>
+            <td>Amount:</td>
+            <td>£10.00</td>
+        </tr>
+
+        <tr>
+            <td><strong>TOTAL:</strong></td>
+            <td><strong>£10.00</strong></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">NO CARDHOLDER VERIFICATION</td>
+        </tr>
+
+        <tr>
+            <td colspan="2">Please keep receipt</td>
+        </tr>
+
+        <tr>
+            <td colspan="2">for your records</td>
+        </tr>
+
+        <tr>
+            <td>PTID:</td>
             <td>88469272</td>
         </tr>
 
         <tr>
-            <td>TID</td>
+            <td>MID:</td>
+            <td>6651939</td>
+        </tr>
+
+        <tr>
+            <td>TID:</td>
             <td>1 2016-09-26 14:01:51 - RX: 00307592</td>
         </tr>
 
-
         <tr>
-            <td>Total</td>
-            <td>10.00</td>
+            <td>Date / Time:</td>
+            <td>2016-09-26 13:57:34</td>
         </tr>
 
         <tr>
-            <td>TxnType</td>
-            <td>Sale</td>
+            <td>EFTSN:</td>
+            <td>0002</td>
+        </tr>
+
+    <tr>
+        <td colspan="2">
+            <hr/>
+        </td>
+    </tr>
+
+        <tr>
+            <td>Authcode:</td>
+            <td>10027</td>
+        </tr>
+
+
+        <tr>
+            <td>AID:</td>
+            <td>A0000000041010</td>
         </tr>
 
         <tr>
-            <td>KeepText1</td>
-            <td>Please keep receipt</td>
+            <td>App Eff:</td>
+            <td>0104</td>
         </tr>
 
         <tr>
-            <td>KeepText2</td>
-            <td>for your records</td>
+            <td>App Seq:</td>
+            <td>01</td>
         </tr>
+
+
+    <!--
+        <tr>
+            <td>CustomerPresent</td>
+            <td>1</td>
+        </tr>
+    -->
+
+    <tr>
+        <td colspan="2">
+            <hr/>
+        </td>
+    </tr>
 
         <tr>
             <td colspan="2">Base Config Server</td>

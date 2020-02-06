@@ -9,7 +9,11 @@ table.verifone-receipt * {
 
 table.verifone-receipt {
     width: 100%;
-    font-family: ;
+    font-family: "Courier", monospace;
+}
+
+table.verifone-receipt td {
+    padding: 1px 0;
 }
 
 table.verifone-receipt td:first-child {
@@ -22,6 +26,11 @@ table.verifone-receipt td:last-child {
 
 table.verifone-receipt td:first-child:last-child {
     text-align: center;
+}
+
+table.verifone-receipt hr {
+    margin: 5px 0;
+    border-style: dashed;
 }
 </style>
 
@@ -38,68 +47,85 @@ table.verifone-receipt td:first-child:last-child {
         </tr>
     {{/isCustomer}}
 
+        {{#Duplicate}}
+        <tr>
+            <td colspan="2">*** DUPLICATE COPY ***</td>
+        </tr>
+    {{/Duplicate}}
+
     {{#Header}}
         <tr>
             <td colspan="2">{{Header}}</td>
         </tr>
     {{/Header}}
 
-    {{#AID}}
-        <tr>
-            <td>AID</td>
-            <td>{{AID}}</td>
-        </tr>
-    {{/AID}}
-
-    {{#Amount}}
-        <tr>
-            <td>Amount</td>
-            <td>{{Amount}}</td>
-        </tr>
-    {{/Amount}}
-
-    {{#AppSeq}}
-        <tr>
-            <td>AppSeq</td>
-            <td>{{AppSeq}}</td>
-        </tr>
-    {{/AppSeq}}
-
-    {{#AuthCode}}
-        <tr>
-            <td>AuthCode</td>
-            <td>{{AuthCode}}</td>
-        </tr>
-    {{/AuthCode}}
-
-    {{#CaptureMethod}}
-        <tr>
-            <td>CaptureMethod</td>
-            <td>{{CaptureMethod}}</td>
-        </tr>
-    {{/CaptureMethod}}
+    <tr>
+        <td colspan="2">
+            <hr/>
+        </td>
+    </tr>
 
     {{#CardScheme}}
         <tr>
-            <td>CardScheme</td>
             <td>{{CardScheme}}</td>
+            <td></td>
         </tr>
     {{/CardScheme}}
 
-
-    {{#CurrencySymbol}}
+    {{#PAN}}
         <tr>
-            <td>CurrencySymbol</td>
-            <td>{{CurrencySymbol}}</td>
+            <td>{{PAN}}</td>
+            <td></td>
         </tr>
-    {{/CurrencySymbol}}
+    {{/PAN}}
 
-    {{#CustomerPresent}}
+    {{#formattedExpiryDate}}
         <tr>
-            <td>CustomerPresent</td>
-            <td>{{CustomerPresent}}</td>
+            <td>Expiry:</td>
+            <td>{{formattedExpiryDate}}</td>
         </tr>
-    {{/CustomerPresent}}
+    {{/formattedExpiryDate}}
+
+    {{#IssueNo}}
+        <tr>
+            <td>Issue No:</td>
+            <td>{{IssueNo}}</td>
+        </tr>
+    {{/IssueNo}}
+
+    {{#TxnType}}
+        <tr>
+            <td>{{TxnType}}</td>
+            <td></td>
+        </tr>
+    {{/TxnType}}
+
+    {{#CaptureMethod}}
+        <tr>
+            <td>{{CaptureMethod}}</td>
+            <td></td>
+        </tr>
+    {{/CaptureMethod}}
+
+    {{#CreditDebitMessage}}
+        <tr>
+            <td colspan="2">{{CreditDebitMessage}}</td>
+        </tr>
+    {{/CreditDebitMessage}}
+
+        {{#Amount}}
+        <tr>
+            <td>Amount:</td>
+            <td>{{CurrencySymbol}}{{Amount}}</td>
+        </tr>
+    {{/Amount}}
+
+    {{#Total}}
+        <tr>
+            <td><strong>TOTAL:</strong></td>
+            <td><strong>{{CurrencySymbol}}{{Total}}</strong></td>
+        </tr>
+    {{/Total}}
 
     {{#CVM}}
         <tr>
@@ -119,68 +145,95 @@ table.verifone-receipt td:first-child:last-child {
         </tr>
     {{/KeepText2}}
 
-    {{#ExpiryDate}}
-        <tr>
-            <td>ExpiryDate</td>
-            <td>{{ExpiryDate}}</td>
-        </tr>
-    {{/ExpiryDate}}
-
-    {{#IssueNo}}
-        <tr>
-            <td>IssueNo</td>
-            <td>{{IssueNo}}</td>
-        </tr>
-    {{/IssueNo}}
-
-    {{#MID}}
-        <tr>
-            <td>MID</td>
-            <td>{{MID}}</td>
-        </tr>
-    {{/MID}}
-
-    {{#PAN}}
-        <tr>
-            <td>PAN</td>
-            <td>{{PAN}}</td>
-        </tr>
-    {{/PAN}}
-
     {{#PTID}}
         <tr>
-            <td>PTID</td>
+            <td>PTID:</td>
             <td>{{PTID}}</td>
         </tr>
     {{/PTID}}
 
+    {{#MID}}
+        <tr>
+            <td>MID:</td>
+            <td>{{MID}}</td>
+        </tr>
+    {{/MID}}
+
     {{#TID}}
         <tr>
-            <td>TID</td>
+            <td>TID:</td>
             <td>{{TID}}</td>
         </tr>
     {{/TID}}
 
+    {{#TxnDateTime}}
+        <tr>
+            <td>Date / Time:</td>
+            <td>{{TxnDateTime}}</td>
+        </tr>
+    {{/TxnDateTime}}
+
+    {{#EFTSN}}
+        <tr>
+            <td>EFTSN:</td>
+            <td>{{EFTSN}}</td>
+        </tr>
+    {{/EFTSN}}
+
+    <tr>
+        <td colspan="2">
+            <hr/>
+        </td>
+    </tr>
+
+    {{#AuthCode}}
+        <tr>
+            <td>Authcode:</td>
+            <td>{{AuthCode}}</td>
+        </tr>
+    {{/AuthCode}}
+
     {{#Reference}}
         <tr>
-            <td>Reference</td>
+            <td>Ref:</td>
             <td>{{Reference}}</td>
         </tr>
     {{/Reference}}
 
-    {{#Total}}
+    {{#AID}}
         <tr>
-            <td>Total</td>
-            <td>{{Total}}</td>
+            <td>AID:</td>
+            <td>{{AID}}</td>
         </tr>
-    {{/Total}}
+    {{/AID}}
 
-    {{#TxnType}}
+    {{#AppEff}}
         <tr>
-            <td>TxnType</td>
-            <td>{{TxnType}}</td>
+            <td>App Eff:</td>
+            <td>{{AppEff}}</td>
         </tr>
-    {{/TxnType}}
+    {{/AppEff}}
+
+    {{#AppSeq}}
+        <tr>
+            <td>App Seq:</td>
+            <td>{{AppSeq}}</td>
+        </tr>
+    {{/AppSeq}}
+
+
+    <!--{{#CustomerPresent}}
+        <tr>
+            <td>CustomerPresent</td>
+            <td>{{CustomerPresent}}</td>
+        </tr>
+    {{/CustomerPresent}}-->
+
+    <tr>
+        <td colspan="2">
+            <hr/>
+        </td>
+    </tr>
 
     {{#Footer}}
         <tr>
