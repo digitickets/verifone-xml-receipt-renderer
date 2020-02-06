@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VoucherDetails>
+    <TrainingMode>false</TrainingMode>
+    <ReceiptType>Customer</ReceiptType>
+    <Header>BARCLAYS 3401 Industrial Road Las Vegas NV. 89109</Header>
+    <PTID>88469272</PTID> 2016-11-04 13:05:23 - RX:
+    <TID>*****7521</TID>
+    <MID>**51939</MID>
+    <MkTransactionID>36608</MkTransactionID>
+    <TxnDateTime>2016-11-04 13:58:52</TxnDateTime>
+    <CardScheme>VI Debit UK</CardScheme>
+    <PAN>453979******0106</PAN>
+    <TxnType>Sale</TxnType>
+    <CaptureMethod>Swiped</CaptureMethod>
+    <CustomerPresent>1</CustomerPresent>
+    <ECommerce>false</ECommerce>
+    <ContAuth>false</ContAuth>
+    <AccountOnFile>false</AccountOnFile>
+    <PinEntered>0</PinEntered>
+    <CreditDebitMessage>Please debit my account</CreditDebitMessage>
+    <CurrencySymbol>£</CurrencySymbol>
+    <CurrencyAbbreviation>GBP</CurrencyAbbreviation>
+    <Amount>10.00</Amount>
+    <Cashback>0</Cashback>
+    <Total>10.00</Total>
+    <CVM>SIGNATURE VERIFIED</CVM>
+    <IssueNo/>
+    <KeepText1>Please keep receipt</KeepText1>
+    <KeepText2>for your records</KeepText2>
+    <EFTSN>1777</EFTSN>
+    <AuthCode>109850</AuthCode>
+    <Reference/>
+    <AID/>
+    <AC/>
+    <AppEff/>
+    <AppSeq/>
+    <AppExp>03/17</AppExp>
+    <CardHolder/>
+    <CardAVN/>
+    <Footer>Thank you!</Footer>
+    <GratuityBoxRequired>false</GratuityBoxRequired>
+    <ExtendedReceipt>false</ExtendedReceipt>
+    <DisableCurrencySymbol>false</DisableCurrencySymbol>
+    <AuthOnly>false</AuthOnly>
+    <CardSchemePrintText/>
+    <PrintAttempts>1</PrintAttempts>
+    <ContactlessMSD>false</ContactlessMSD>
+    <TokenID>1200000201</TokenID>
+    <TokenRegistrationResult>Registration successful</TokenRegistrationResult>
+    <TokenRegistrationOnly>false</TokenRegistrationOnly>
+    <ARC>00</ARC>
+    <ExpiryDate>0317</ExpiryDate>
+    <Duplicate>false</Duplicate>
+    <Gratuity>0</Gratuity>
+    <OfflineSpendAmount>0</OfflineSpendAmount>
+    <CID/>
+    <CVMR/>
+    <TSI/>
+    <TVR/>
+    <IACDef/>
+    <IACDen/>
+    <IACOnl/>
+    <AIP/>
+    <TACDen/>
+    <TACDef/>
+    <TACOnl/>
+    <TDOL/>
+    <DDOL/>
+    <MCC/>
+    <CAPK/>
+    <IAD/>
+    <ATC/>
+    <UN/>
+    <TCtry/>
+    <AmtO/>
+    <TransactionCurrencyCode/>
+</VoucherDetails>

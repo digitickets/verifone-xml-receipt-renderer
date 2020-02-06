@@ -1,0 +1,10 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "jest": true
+    },
+    "extends": [
+        "@digitickets/eslint-config-digitickets"
+    ]
+}

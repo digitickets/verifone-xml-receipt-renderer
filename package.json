@@ -1,0 +1,32 @@
+{
+  "name": "@digitickets/verifone-xml-receipt-renderer",
+  "version": "1.0.0",
+  "description": "Convert XML from Verifone Chip and Pin terminals to HTML receipts.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitickets/verifone-xml-receipt-renderer.git"
+  },
+  "author": {
+    "name": "DigiTickets",
+    "email": "support@digitickets.co.uk"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/digitickets/verifone-xml-receipt-renderer/issues"
+  },
+  "homepage": "https://github.com/digitickets/verifone-xml-receipt-renderer#readme",
+  "dependencies": {
+    "browser-xml2js": "^0.4.19",
+    "mustache": "^4.0.0"
+  },
+  "devDependencies": {
+    "@digitickets/eslint-config-digitickets": "^1.0.15",
+    "jest": "^25.1.0",
+    "rimraf": "^3.0.1"
+  }
+}

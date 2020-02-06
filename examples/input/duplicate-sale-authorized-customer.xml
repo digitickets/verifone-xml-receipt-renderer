@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VoucherDetails>
+    <TrainingMode>false</TrainingMode>
+    <ReceiptType>Customer</ReceiptType>
+    <Header>BARCLAYS 3401 Industrial Road Las Vegas NV. 89109</Header>
+    <PTID>88496068</PTID>
+    <TID>****1040</TID>
+    <MID>***16002</MID>
+    <MkTransactionID>36248</MkTransactionID>
+    <TxnDateTime>2017-08-03 09:23:38</TxnDateTime>
+    <CardScheme>VISA CREDIT</CardScheme>
+    <PAN>476173******0119</PAN>
+    <TxnType>Sale</TxnType>
+    <CaptureMethod>ICC</CaptureMethod>
+    <CustomerPresent>1</CustomerPresent>
+    <ECommerce>false</ECommerce>
+    <ContAuth>false</ContAuth>
+    <AccountOnFile>false</AccountOnFile>
+    <PinEntered>1</PinEntered>
+    <CreditDebitMessage>Please debit my account</CreditDebitMessage>
+    <CurrencySymbol>£</CurrencySymbol>
+    <CurrencyAbbreviation>GBP</CurrencyAbbreviation>
+    <Amount>10.00</Amount>
+    <Cashback>0</Cashback>
+    <Total>10.00</Total>
+    <CVM>PIN VERIFIED</CVM>
+    <KeepText1>Please keep receipt</KeepText1>
+    <KeepText2>for your records</KeepText2>
+    <EFTSN/>
+    <AuthCode>789DE</AuthCode>
+    <Reference>VerifoneTest</Reference>
+    <AID>A0000000031010</AID>
+    <AC>45892AE96D065567</AC>
+    <AppEff>0709</AppEff>
+    <AppSeq>01</AppSeq>
+    <AppExp>12/22</AppExp>
+    <CardHolder>VISA ACQUIRER TEST CARD 01</CardHolder>
+    <CardAVN>008C</CardAVN>
+    <Footer>Thank you
+    </Footer>
+    <GratuityBoxRequired>false</GratuityBoxRequired>
+    <ExtendedReceipt>false
+    </ExtendedReceipt>
+    <DisableCurrencySymbol>false</DisableCurrencySymbol>
+    <AuthOnly>false</AuthOnly>
+    <CardSchemePrintText/>
+    <PrintAttempts>1</PrintAttempts>
+    <ContactlessMSD>false</ContactlessMSD>
+    <TokenID>10283926201
+    </TokenID>
+    <TokenRegistrationResult>Registration successful</TokenRegistrationResult>
+    <TokenRegistrationOnly>false
+    </TokenRegistrationOnly>
+    <ARC>00</ARC>
+    <ExpiryDate>1222</ExpiryDate>
+    <Duplicate>>true</Duplicate>
+    <Gratuity>0</Gratuity>
+    <OfflineSpendAmount>0</OfflineSpendAmount>
+    <CryptoTxnType>00
+    </CryptoTxnType>
+    <CID>40</CID>
+    <CVMR>410302</CVMR>
+    <TSI>E800</TSI>
+    <TVR>0200008000</TVR>
+    <IACDef>F040008800</IACDef>
+    <IACDen>0010000000</IACDen>
+    <IACOnl>F040009800</IACOnl>
+    <AIP>5C00</AIP>
+    <TACDen>0010000000</TACDen>
+    <TACDef>D84000A800</TACDef>
+    <TACOnl>D84004F800</TACOnl>
+    <TDOL>9F02065F2A029A039C0195059F3704</TDOL>
+    <DDOL>9F3704</DDOL>
+    <MCC>5999</MCC>
+    <CAPK>92</CAPK>
+    <IAD>06010A03600000</IAD>
+    <ATC>0001</ATC>
+    <UN>42038292</UN>
+    <TCtry>0826</TCtry>
+    <AmtO>000000000000</AmtO>
+    <TransactionCurrencyCode>0826</TransactionCurrencyCode>
+</VoucherDetails>

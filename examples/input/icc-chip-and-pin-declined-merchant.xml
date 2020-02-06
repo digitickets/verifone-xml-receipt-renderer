@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VoucherDetails>
+    <TrainingMode>false</TrainingMode>
+    <ReceiptType>MerchantDeclined</ReceiptType>
+    <Header>BARCLAYS 3401 Industrial Road Las Vegas NV. 89109</Header>
+    <PTID>88469272</PTID>
+    <TID>100307521</TID>
+    <MID>6651939</MID>
+    <MkTransactionID>37258</MkTransactionID>
+    <TxnDateTime>2016-11-17 13:28:57</TxnDateTime>
+    <CardScheme>MASTERCARD</CardScheme>
+    <PAN>541333******0011</PAN>
+    <TxnType>Sale</TxnType>
+    <CaptureMethod>ICC PIN only</CaptureMethod>
+    <CustomerPresent>1</CustomerPresent>
+    <ECommerce>false</ECommerce>
+    <ContAuth>false</ContAuth>
+    <AccountOnFile>false</AccountOnFile>
+    <PinEntered>1</PinEntered>
+    <CreditDebitMessage>Please debit my account</CreditDebitMessage>
+    <CurrencySymbol>£</CurrencySymbol>
+    <CurrencyAbbreviation>GBP</CurrencyAbbreviation>
+    <Amount>120.00</Amount>
+    <Cashback>0</Cashback>
+    <Total>120.00</Total>
+    <CVM>DECLINED</CVM>
+    <IssueNo>03</IssueNo>
+    <KeepText1>Please keep receipt</KeepText1>
+    <KeepText2>for your records</KeepText2>
+    <EFTSN>2662</EFTSN>
+    <AuthCode>005433</AuthCode>
+    <Reference></Reference>
+    <AID>A0000000041010</AID>
+    <AC>FE283CC9E8386605</AC>
+    <AppEff>0104</AppEff>
+    <AppSeq>03</AppSeq>
+    <AppExp>12/25</AppExp>
+    <CardHolder></CardHolder>
+    <CardAVN>0002</CardAVN>
+    <Footer>Thank you!</Footer>
+    <GratuityBoxRequired>false</GratuityBoxRequired>
+    <ExtendedReceipt>false</ExtendedReceipt>
+    <DisableCurrencySymbol>false</DisableCurrencySymbol>
+    <AuthOnly>false</AuthOnly>
+    <CardSchemePrintText></CardSchemePrintText>
+    <PrintAttempts>1</PrintAttempts>
+    <ContactlessMSD>false</ContactlessMSD>
+    <TokenID>1200000801</TokenID>
+    <TokenRegistrationResult>Registration successful</TokenRegistrationResult>
+    <TokenRegistrationOnly>false</TokenRegistrationOnly>
+    <ARC>00</ARC>
+    <ExpiryDate>1225</ExpiryDate>
+    <Duplicate>false</Duplicate>
+    <Gratuity>0</Gratuity>
+    <OfflineSpendAmount>0</OfflineSpendAmount>
+    <CID>00</CID>
+    <CVMR>10302</CVMR>
+    <TSI>E800</TSI>
+    <TVR>0000008000</TVR>
+    <IACDef>FC50A00000</IACDef>
+    <IACDen>0000000000</IACDen>
+    <IACOnl>F870A49800</IACOnl>
+    <AIP>3000</AIP>
+    <TACDen></TACDen>
+    <TACDef></TACDef>
+    <TACOnl></TACOnl>
+    <TDOL></TDOL>
+    <DDOL></DDOL>
+    <MCC></MCC>
+    <CAPK></CAPK>
+    <IAD>021025900F040400000000000000000000FF</IAD>
+    <ATC>0027</ATC>
+    <UN>5889485F</UN>
+    <TCtry></TCtry>
+    <AmtO>000000000000</AmtO>
+    <TransactionCurrencyCode>0826</TransactionCurrencyCode>
+</VoucherDetails>

@@ -1,1 +1,1 @@
-# verifone-xml-receipt-printer
+# Verifone XML Receipt Renderer

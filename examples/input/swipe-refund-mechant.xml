@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<VoucherDetails>
+    <TrainingMode>false</TrainingMode>
+    <ReceiptType>MerchantSignature</ReceiptType>
+    <Header>BARCLAYS 3401 Industrial Road Las Vegas NV. 89109</Header>
+    <PTID>88469272</PTID>
+    <TID>1 2016-09-29 12:35:59 - RX: 00307592</TID>
+    <MID>6651939</MID>
+    <MkTransactionID>0</MkTransactionID>
+    <TxnDateTime>2016-09-29 12:31:37</TxnDateTime>
+    <CardScheme>VI Debit UK</CardScheme>
+    <PAN>453979******0106</PAN>
+    <TxnType>Refund</TxnType>
+    <CaptureMethod>Swiped</CaptureMethod>
+    <CustomerPresent>1</CustomerPresent>
+    <ECommerce>false</ECommerce>
+    <ContAuth>false</ContAuth>
+    <AccountOnFile>false</AccountOnFile>
+    <PinEntered>0</PinEntered>
+    <CreditDebitMessage>Please debit my account</CreditDebitMessage>
+    <CurrencySymbol>£</CurrencySymbol>
+    <CurrencyAbbreviation>GBP</CurrencyAbbreviation>
+    <Amount>10.00</Amount>
+    <Cashback>0</Cashback>
+    <Total>10.00</Total>
+    <CVM>Please Sign Below</CVM>
+    <IssueNo/>
+    <KeepText1>Please keep receipt</KeepText1>
+    <KeepText2>for your records</KeepText2>
+    <EFTSN>0077</EFTSN>
+    <AuthCode>10775</AuthCode>
+    <Reference>CP-REFUND</Reference>
+    <AID/>
+    <AC/>
+    <AppEff/>
+    <AppSeq/>
+    <AppExp>03/17</AppExp>
+    <CardHolder/>
+    <CardAVN/>
+    <Footer>Base Config Server</Footer>
+    <GratuityBoxRequired>false</GratuityBoxRequired>
+    <ExtendedReceipt>false</ExtendedReceipt>
+    <DisableCurrencySymbol>false</DisableCurrencySymbol>
+    <AuthOnly>false</AuthOnly>
+    <CardSchemePrintText/>
+    <PrintAttempts>1</PrintAttempts>
+    <ContactlessMSD>false</ContactlessMSD>
+    <TokenID/>
+    <TokenRegistrationResult>Registration not performed</TokenRegistrationResult>
+    <TokenRegistrationOnly>false</TokenRegistrationOnly>
+    <ARC>00</ARC>
+    <ExpiryDate>0317</ExpiryDate>
+    <Duplicate>false</Duplicate>
+    <Gratuity>0</Gratuity>
+    <OfflineSpendAmount>0</OfflineSpendAmount>
+</VoucherDetails>
