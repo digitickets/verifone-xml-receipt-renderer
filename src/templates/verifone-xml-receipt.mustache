@@ -133,6 +133,24 @@ table.verifone-receipt hr {
         </tr>
     {{/CVM}}
 
+    {{#showSignatureLine}}
+        <tr>
+            <td>
+                <br />
+                <br />
+                X
+                <br />
+                <br />
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <hr />
+            </td>
+        </tr>
+    {{/showSignatureLine}}
+
     {{#KeepText1}}
         <tr>
             <td colspan="2">{{KeepText1}}</td>
@@ -166,12 +184,27 @@ table.verifone-receipt hr {
         </tr>
     {{/TID}}
 
-    {{#TxnDateTime}}
+
+
+    {{#showSeparateDateTime}}
         <tr>
-            <td>Date / Time:</td>
-            <td>{{TxnDateTime}}</td>
+            <td>Date:</td>
+            <td>{{date}}</td>
         </tr>
-    {{/TxnDateTime}}
+        <tr>
+            <td>Time:</td>
+            <td>{{time}}</td>
+        </tr>
+    {{/showSeparateDateTime}}
+    {{^showSeparateDateTime}}
+        {{#TxnDateTime}}
+            <tr>
+                <td>Date / Time:</td>
+                <td>{{TxnDateTime}}</td>
+            </tr>
+        {{/TxnDateTime}}
+    {{/showSeparateDateTime}}
+
 
     {{#EFTSN}}
         <tr>
@@ -185,6 +218,26 @@ table.verifone-receipt hr {
             <hr />
         </td>
     </tr>
+
+    {{#TokenRegistrationResult}}
+        <tr>
+            <td>Registration:</td>
+            <td>{{TokenRegistrationResult}}
+        </tr>
+
+        {{#TokenID}}
+            <tr>
+                <td>Token ID:</td>
+                <td>{{TokenID}}
+            </tr>
+        {{/TokenID}}
+
+        <tr>
+            <td colspan="2">
+                <hr />
+            </td>
+        </tr>
+    {{/TokenRegistrationResult}}
 
     {{#AuthCode}}
         <tr>
