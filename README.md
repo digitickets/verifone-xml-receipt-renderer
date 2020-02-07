@@ -41,4 +41,4 @@ The receipts look like this:
 
 ## Disclaimer
 
-⚠️ We provide no guarantee whatsoever that this will pass Verifone's accreditation and be compliant with banking regulations. Consider this a learning resource and not a trusted implantation you can rely on! ⚠️
+⚠️ We provide no guarantee whatsoever that this will pass Verifone's accreditation or be compliant with banking regulations. Consider this a learning resource and not a trusted implantation you can rely on! ⚠️
