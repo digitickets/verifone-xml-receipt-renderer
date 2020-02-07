@@ -1,23 +1,14 @@
-const MustacheTemplateCompiler = require('../src/MustacheTemplateCompiler');
+const { compileMustacheTemplate } = require('../../src/funcs/compileTemplate');
 
-describe('MustacheTemplateCompiler', () => {
-    /**
-     * @type {MustacheTemplateCompiler}
-     */
-    let compiler;
-
-    beforeEach(() => {
-        compiler = new MustacheTemplateCompiler();
-    });
-
-    describe('compile', () => {
+describe('compileTemplate', () => {
+    describe('compileMustacheTemplate', () => {
         it('Should return compiled string', (done) => {
             const template = '<p>{{ name }}</p>';
             const data = {
                 name: 'Anthony'
             };
 
-            compiler.compile(template, data)
+            compileMustacheTemplate(template, data)
                 .then((result) => {
                     expect(result).toBe('<p>Anthony</p>');
                     done();
@@ -28,7 +19,7 @@ describe('MustacheTemplateCompiler', () => {
         it('Should work with no data', (done) => {
             const template = '<p>hello</p>';
 
-            compiler.compile(template)
+            compileMustacheTemplate(template)
                 .then((result) => {
                     expect(result).toBe('<p>hello</p>');
                     done();

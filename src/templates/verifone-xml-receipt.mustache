@@ -1,6 +1,6 @@
 <style type="text/css">
 /* Reset */
-table.verifone-receipt,
+/*table.verifone-receipt,
 table.verifone-receipt * {
     margin: 0;
     padding: 0;
@@ -32,265 +32,250 @@ table.verifone-receipt hr {
     margin: 5px 0;
     border-style: dashed;
 }
+*/
+
+.verifone-receipt,
+.verifone-receipt * {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-family: "Courier", monospace;
+    font-weight: normal;
+    font-size: 12px;
+    word-break: break-all;
+}
+
+.verifone-receipt {
+    width: 100%;
+}
+
+.verifone-receipt strong {
+    font-weight: bolder;
+}
+
+.verifone-receipt hr {
+    margin: 1mm 0;
+    border-style: dashed;
+}
+
+.verifone-receipt h3 {
+    text-align: center;
+}
+
+/* Clear floats */
+.verifone-receipt p:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.verifone-receipt p.center {
+    text-align: center;
+}
+
+.verifone-receipt p.right {
+    text-align: right;
+}
+
+/* Label on the left. Using a <span> tag makes it go funky when resized. At least in Chrome's responsive device mode */
+.verifone-receipt p span {
+    float: left;
+}
+
+.verifone-receipt .signature-box {
+    height: 10mm;
+}
+
 </style>
 
-<table class="verifone-receipt">
+<div class="verifone-receipt">
     {{#isMerchant}}
-        <tr>
-            <td colspan="2">*** MERCHANT COPY ***</td>
-        </tr>
+        <h3>*** MERCHANT COPY ***</h3>
     {{/isMerchant}}
 
     {{#isCustomer}}
-        <tr>
-            <td colspan="2">*** CARDHOLDER COPY ***</td>
-        </tr>
+        <h3>*** CARDHOLDER COPY ***</h3>
     {{/isCustomer}}
 
     {{#Duplicate}}
-        <tr>
-            <td colspan="2">*** DUPLICATE COPY ***</td>
-        </tr>
+        <h3>*** DUPLICATE COPY ***</h3>
     {{/Duplicate}}
 
     {{#Header}}
-        <tr>
-            <td colspan="2">{{Header}}</td>
-        </tr>
+        <h3>{{Header}}</h3>
     {{/Header}}
 
-    <tr>
-        <td colspan="2">
-            <hr />
-        </td>
-    </tr>
+    <hr />
 
     {{#CardScheme}}
-        <tr>
-            <td>{{CardScheme}}</td>
-            <td></td>
-        </tr>
+        <p>{{CardScheme}}</p>
     {{/CardScheme}}
 
     {{#PAN}}
-        <tr>
-            <td>{{PAN}}</td>
-            <td></td>
-        </tr>
+        <p>{{PAN}}</p>
     {{/PAN}}
 
     {{#formattedExpiryDate}}
-        <tr>
-            <td>Expiry:</td>
-            <td>{{formattedExpiryDate}}</td>
-        </tr>
+        <p class="right">
+            <span>Expiry:</span>
+            {{formattedExpiryDate}}
+        </p>
     {{/formattedExpiryDate}}
 
     {{#IssueNo}}
-        <tr>
-            <td>Issue No:</td>
-            <td>{{IssueNo}}</td>
-        </tr>
+        <p class="right">
+            <span>Issue No:</span>
+            {{IssueNo}}
+        </p>
     {{/IssueNo}}
 
     {{#TxnType}}
-        <tr>
-            <td>{{TxnType}}</td>
-            <td></td>
-        </tr>
+        <p>{{TxnType}}</p>
     {{/TxnType}}
 
     {{#CaptureMethod}}
-        <tr>
-            <td>{{CaptureMethod}}</td>
-            <td></td>
-        </tr>
+        <p>{{CaptureMethod}}</p>
     {{/CaptureMethod}}
 
     {{#CreditDebitMessage}}
-        <tr>
-            <td colspan="2">{{CreditDebitMessage}}</td>
-        </tr>
+        <p class="center">{{CreditDebitMessage}}</p>
     {{/CreditDebitMessage}}
 
     {{#Amount}}
-        <tr>
-            <td>Amount:</td>
-            <td>{{CurrencySymbol}}{{Amount}}</td>
-        </tr>
+        <p class="right">
+            <span>Amount:</span>
+            {{CurrencySymbol}}{{Amount}}
+        </p>
     {{/Amount}}
 
     {{#Total}}
-        <tr>
-            <td><strong>TOTAL:</strong></td>
-            <td><strong>{{CurrencySymbol}}{{Total}}</strong></td>
-        </tr>
+        <p class="right">
+            <span><strong>TOTAL:</strong></span>
+            <strong>{{CurrencySymbol}}{{Total}}</strong>
+        </p>
     {{/Total}}
 
     {{#CVM}}
-        <tr>
-            <td colspan="2">{{CVM}}</td>
-        </tr>
+        <p class="center"><strong>{{CVM}}</strong></p>
     {{/CVM}}
 
     {{#showSignatureLine}}
-        <tr>
-            <td>
-                <br />
-                <br />
-                X
-                <br />
-                <br />
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <hr />
-            </td>
-        </tr>
+        <div class="signature-box"></div>
+        <hr />
     {{/showSignatureLine}}
 
     {{#KeepText1}}
-        <tr>
-            <td colspan="2">{{KeepText1}}</td>
-        </tr>
+        <p class="center">{{KeepText1}}</p>
     {{/KeepText1}}
 
     {{#KeepText2}}
-        <tr>
-            <td colspan="2">{{KeepText2}}</td>
-        </tr>
+        <p class="center">{{KeepText2}}</p>
     {{/KeepText2}}
 
     {{#PTID}}
-        <tr>
-            <td>PTID:</td>
-            <td>{{PTID}}</td>
-        </tr>
+        <p class="right">
+            <span>PTID:</span>
+            {{PTID}}
+        </p>
     {{/PTID}}
 
     {{#MID}}
-        <tr>
-            <td>MID:</td>
-            <td>{{MID}}</td>
-        </tr>
+        <p class="right">
+            <span>MID:</span>
+            {{MID}}
+        </p>
     {{/MID}}
 
     {{#TID}}
-        <tr>
-            <td>TID:</td>
-            <td>{{TID}}</td>
-        </tr>
+        <p class="right">
+            <span>TID:</span>
+            {{TID}}
+        </p>
     {{/TID}}
 
-
-
     {{#showSeparateDateTime}}
-        <tr>
-            <td>Date:</td>
-            <td>{{date}}</td>
-        </tr>
-        <tr>
-            <td>Time:</td>
-            <td>{{time}}</td>
-        </tr>
+        <p class="right">
+            <span>Date:</span>
+            {{date}}
+        </p>
+        <p class="right">
+            <span>Time:</span>
+            {{time}}
+        </p>
     {{/showSeparateDateTime}}
     {{^showSeparateDateTime}}
         {{#TxnDateTime}}
-            <tr>
-                <td>Date / Time:</td>
-                <td>{{TxnDateTime}}</td>
-            </tr>
+            <p class="right">
+                <span>Date:</span>
+                {{TxnDateTime}}
+            </p>
         {{/TxnDateTime}}
     {{/showSeparateDateTime}}
 
 
     {{#EFTSN}}
-        <tr>
-            <td>EFTSN:</td>
-            <td>{{EFTSN}}</td>
-        </tr>
+        <p class="right">
+            <span>EFTSN:</span>
+            {{EFTSN}}
+        </p>
     {{/EFTSN}}
 
-    <tr>
-        <td colspan="2">
-            <hr />
-        </td>
-    </tr>
+    <hr />
 
     {{#TokenRegistrationResult}}
-        <tr>
-            <td>Registration:</td>
-            <td>{{TokenRegistrationResult}}
-        </tr>
+        <p class="right">
+            <span>Token:</span>
+            {{TokenRegistrationResult}}
+        </p>
 
         {{#TokenID}}
-            <tr>
-                <td>Token ID:</td>
-                <td>{{TokenID}}
-            </tr>
+            <p class="right">
+                <span>Token ID:</span>
+                {{TokenID}}
+            </p>
         {{/TokenID}}
 
-        <tr>
-            <td colspan="2">
-                <hr />
-            </td>
-        </tr>
+        <hr />
     {{/TokenRegistrationResult}}
 
     {{#AuthCode}}
-        <tr>
-            <td>Authcode:</td>
-            <td>{{AuthCode}}</td>
-        </tr>
+        <p class="right">
+            <span>Authcode:</span>
+            {{AuthCode}}
+        </p>
     {{/AuthCode}}
 
     {{#Reference}}
-        <tr>
-            <td>Ref:</td>
-            <td>{{Reference}}</td>
-        </tr>
+        <p class="right">
+            <span>Ref:</span>
+            {{Reference}}
+        </p>
     {{/Reference}}
 
     {{#AID}}
-        <tr>
-            <td>AID:</td>
-            <td>{{AID}}</td>
-        </tr>
+        <p class="right">
+            <span>AID:</span>
+            {{AID}}
+        </p>
     {{/AID}}
 
     {{#AppEff}}
-        <tr>
-            <td>App Eff:</td>
-            <td>{{AppEff}}</td>
-        </tr>
+        <p class="right">
+            <span>App Eff:</span>
+            {{AppEff}}
+        </p>
     {{/AppEff}}
 
     {{#AppSeq}}
-        <tr>
-            <td>App Seq:</td>
-            <td>{{AppSeq}}</td>
-        </tr>
+        <p class="right">
+            <span>App Seq:</span>
+            {{AppSeq}}
+        </p>
     {{/AppSeq}}
 
-
-    <!--{{#CustomerPresent}}
-        <tr>
-            <td>CustomerPresent</td>
-            <td>{{CustomerPresent}}</td>
-        </tr>
-    {{/CustomerPresent}}-->
-
-    <tr>
-        <td colspan="2">
-            <hr />
-        </td>
-    </tr>
+    <hr />
 
     {{#Footer}}
-        <tr>
-            <td colspan="2">{{Footer}}</td>
-        </tr>
+        <h3>{{Footer}}</h3>
     {{/Footer}}
-</table>
+</div>

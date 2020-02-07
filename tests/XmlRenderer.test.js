@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const XmlRenderer = require('../src/XmlRenderer');
-const MustacheTemplateCompiler = require('../src/MustacheTemplateCompiler');
 
 describe('XmlRenderer', () => {
     /**
@@ -10,42 +9,29 @@ describe('XmlRenderer', () => {
     let xmlRenderer;
 
     beforeEach(() => {
-        xmlRenderer = new XmlRenderer(
-            new MustacheTemplateCompiler()
-        );
+        xmlRenderer = new XmlRenderer();
     });
 
-    describe('parseXml', () => {
-        it('Should convert XML to JSON', (done) => {
+    describe('setTemplateString', () => {
+        it('Should allow overriding the template', () => {
+            const customTemplate = '<p>my custom template</p>';
+            expect(xmlRenderer.getTemplateString()).not.toBe(customTemplate);
+            xmlRenderer.setTemplateString(customTemplate);
+            expect(xmlRenderer.getTemplateString()).toBe(customTemplate);
+        });
+    });
+
+    describe('renderXml', () => {
+        beforeEach(() => {
+            xmlRenderer.setTemplateString(fs.readFileSync(path.join(__dirname, '../src/templates/verifone-xml-receipt.mustache')).toString());
+        });
+
+        it('Should produce HTML', () => {
             const xml = fs.readFileSync(path.resolve(__dirname, 'examples/p400-declined-receipt.xml'));
-            xmlRenderer.parseXml(xml)
+            return xmlRenderer.renderXml(xml)
                 .then((result) => {
-                    expect(result.hasOwnProperty('VoucherDetails')).toBe(false);
-                    expect(result.CardScheme).toBe('MasterCard');
-                    expect(result.ECommerce).toBe(false);
-                    expect(result.Amount).toBe('0.01');
-                    done();
-                })
-                .catch(done.fail);
-        });
-
-        it('Should fail with invalid XML', (done) => {
-            const xml = 'hello';
-            xmlRenderer.parseXml(xml)
-                .then(done.fail)
-                .catch((err) => {
-                    expect(err instanceof Error).toBe(true);
-                    done();
-                });
-        });
-
-        it('Should fail with valid XML without VoucherDetails', (done) => {
-            const xml = '<MyDocument><Animal>Cat</Animal></MyDocument>';
-            xmlRenderer.parseXml(xml)
-                .then(done.fail)
-                .catch((err) => {
-                    expect(err instanceof Error).toBe(true);
-                    done();
+                    // TODO: Check things
+                    console.log(result);
                 });
         });
     });

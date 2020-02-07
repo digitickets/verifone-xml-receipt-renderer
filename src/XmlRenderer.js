@@ -1,70 +1,57 @@
-const xml2js = require('browser-xml2js');
-const { prepData } = require('./prepData');
+const { compileMustacheTemplate } = require('./funcs/compileTemplate');
+const { parseXml } = require('./funcs/parseXml');
+const { prepData } = require('./funcs/prepData');
 
-/**
- * @param {MustacheTemplateCompiler} mustacheTemplateCompiler
- */
-const XmlRenderer = function (
-    mustacheTemplateCompiler
-) {
-    this.templateCompiler = mustacheTemplateCompiler;
+const XmlRenderer = function () {
+    /**
+     * The mustache template to use to render the receipts.
+     *
+     * @private
+     * @type {string}
+     */
+    this.templateString = '';
 };
 
 XmlRenderer.prototype = {
-    renderXml(xmlString) {
-        return this.parseXml(xmlString)
-            .then((data) => {
-                prepData(data);
-                return this.renderData(data);
-            });
-    },
-
     /**
-     * @param {string} xmlString
+     * Take a string of raw XML from a Verifone response, parses it, and renders it with the HTML template.
+     * Returns a string of HTML.
      *
+     * @param {string} xmlString
      * @return {Promise<string>}
      */
-    parseXml(xmlString) {
-        return new Promise((resolve, reject) => {
-            // https://www.npmjs.com/package/browser-xml2js recommends creating a new parser for each string.
-            const parser = new xml2js.Parser({
-                emptyTag: null, // Default value for empty tags.
-                explicitArray: false, // Don't make all values be arrays.
-                valueProcessors: [
-                    xml2js.processors.parseBooleans, // Convert boolean-like strings to booleans.
-                ]
+    renderXml(xmlString) {
+        return parseXml(xmlString)
+            .then((data) => {
+                prepData(data);
+                return this.renderTemplateWithData(data);
             });
-
-            parser.parseString(
-                xmlString,
-                (err, result) => {
-                    if (err) {
-                        reject(err);
-                    } else if (result && result.VoucherDetails) {
-                        resolve(result.VoucherDetails);
-                    } else {
-                        reject(new Error('XML did not contain VoucherDetails'));
-                    }
-                }
-            );
-        });
-    },
-
-    getTemplateContents() {
-        // FIXME!!!
-        const fs = require('fs');
-        const path = require('path');
-        return fs.readFileSync(path.join(__dirname, 'templates/verifone-xml-receipt.mustache')).toString();
     },
 
     /**
+     * @param {string} templateString
+     */
+    setTemplateString(templateString) {
+        this.templateString = templateString;
+    },
+
+    /**
+     * @return {string}
+     */
+    getTemplateString() {
+        return this.templateString;
+    },
+
+    /**
+     * @private
+     *
      * @param {{}} data Contents of the VoucherDetails element of the Verifone XML.
      *
      * @return {Promise<string>}
      */
-    renderData(data) {
-        return this.templateCompiler.compile(
-            this.getTemplateContents(),
+    renderTemplateWithData(data) {
+        return compileMustacheTemplate(
+            this.getTemplateString(),
             data
         );
     }

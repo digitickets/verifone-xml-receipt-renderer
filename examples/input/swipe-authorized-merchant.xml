@@ -3,7 +3,7 @@
     <TrainingMode>false</TrainingMode>
     <ReceiptType>MerchantSignature</ReceiptType>
     <Header>BARCLAYS 3401 Industrial Road Las Vegas NV. 89109</Header>
-    <PTID>88469272 2016-11-04 13:05:01 - RX:</PTID>
+    <PTID>88469272</PTID>
     <TID>100307521</TID>
     <MID>6651939</MID>
     <MkTransactionID>36608</MkTransactionID>

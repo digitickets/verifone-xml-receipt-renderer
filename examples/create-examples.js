@@ -17,8 +17,20 @@ xmlFiles.forEach(async (filename) => {
 
     let html = await xmlRenderer.renderXml(xml);
 
-    // For the examples we are going to wrap them in a body tag so £ symbols display correctly.
-    html = `<html lang="en"><head><meta charset="UTF-8"></head><body>${html}</body></html>`;
+    // For the examples we are going to wrap them in a body tag so UTF8 symbols display correctly
+    // and add some default styling to the whole page.
+    html = `<html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <style type="text/css">
+                body {
+                    margin: 0;
+                    padding: 0;
+                }
+            </style>
+        </head>
+        <body>${html}</body>
+    </html>`;
 
     fs.writeFileSync(
         path.join(outputDir, name + '.html'),
