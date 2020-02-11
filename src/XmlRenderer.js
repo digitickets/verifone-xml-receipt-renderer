@@ -1,3 +1,4 @@
+const defaultTemplate = require('./templates/verifone-xml-receipt');
 const { compileMustacheTemplate } = require('./funcs/compileTemplate');
 const { parseXml } = require('./funcs/parseXml');
 const { prepData } = require('./funcs/prepData');
@@ -9,7 +10,7 @@ const XmlRenderer = function () {
      * @private
      * @type {string}
      */
-    this.templateString = '';
+    this.templateString = defaultTemplate;
 };
 
 XmlRenderer.prototype = {

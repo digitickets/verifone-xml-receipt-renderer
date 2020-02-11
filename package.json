@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
+    "build": "node ./template-to-js.js",
     "coverage": "jest --coverage",
     "create-examples": "node ./examples/create-examples.js"
   },

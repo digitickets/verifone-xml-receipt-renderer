@@ -1,7 +1,12 @@
 const fs = require('fs');
 const path = require('path');
-const rimraf = require('rimraf');
-const xmlRenderer = require('../src/index');
+const rimraf = require('rimraf'); // eslint-disable-line import/no-extraneous-dependencies
+const XmlRenderer = require('../src/index');
+
+/**
+ * @type {XmlRenderer}
+ */
+const renderer = new XmlRenderer();
 
 const inputDir = path.join(__dirname, 'input');
 const outputDir = path.join(__dirname, 'output');
@@ -15,7 +20,7 @@ xmlFiles.forEach(async (filename) => {
     const name = filename.split('.')[0];
     const xml = fs.readFileSync(path.join(inputDir, filename)).toString();
 
-    let html = await xmlRenderer.renderXml(xml);
+    let html = await renderer.renderXml(xml);
 
     // For the examples we are going to wrap them in a body tag so UTF8 symbols display correctly
     // and add some default styling to the whole page.
