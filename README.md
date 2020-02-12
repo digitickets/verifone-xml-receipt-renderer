@@ -15,9 +15,10 @@ It's up to us to take that XML and produce a card receipt from it. This package 
 ## Use
 
 ```javascript
-const xmlReceiptRenderer = require('@digitickets/verifone-xml-receipt-renderer');
+const XmlRenderer = require('@digitickets/verifone-xml-receipt-renderer');
 const xml = '<?xml version="1.0" encoding="utf-8"?><VoucherDetails><ReceiptType>MerchantDeclined</ReceiptType><Amount>12.34</Amount></VoucherDetails'; // Lots omitted.
-xmlReceiptRenderer.renderXml(xml)
+const xmlRenderer = new XmlRenderer();
+xmlRenderer.renderXml(xml)
     .then((html) => {
         // Do what you've gotta do to print it.
         console.log('html', html);    
