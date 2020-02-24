@@ -57,7 +57,7 @@ const splitDateTimeString = (str) => {
  * Accepts an object of data and adds a bunch of extra properties to help with rendering it.
  *
  * @param {object} data
- * @return {{ isMerchant: boolean, isCustomer: boolean, formattedExpiryDate: string }}
+ * @return {{ isMerchant: boolean, isCustomer: boolean, formattedExpiryDate: string, isExtended: boolean }}
  */
 const prepData = (data) => {
     data.isMerchant = isMerchant(data.ReceiptType);
@@ -71,6 +71,9 @@ const prepData = (data) => {
     data.date = date;
     data.time = time;
     data.showSeparateDateTime = !!(data.date && data.time);
+
+    // Print extended receipt if either the XML tells us to, or
+    data.isExtended = data.ExtendedReceipt;
 
     return data;
 };

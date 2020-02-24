@@ -11,9 +11,23 @@ const XmlRenderer = function () {
      * @type {string}
      */
     this.templateString = defaultTemplate;
+
+    /**
+     * Should extended receipts always be created?
+     *
+     * @type {boolean}
+     */
+    this.extendedReceipts = false;
 };
 
 XmlRenderer.prototype = {
+    /**
+     * @param {boolean} value
+     */
+    setExtendedReceipts(value) {
+        this.extendedReceipts = value;
+    },
+
     /**
      * Take a string of raw XML from a Verifone response, parses it, and renders it with the HTML template.
      * Returns a string of HTML.
@@ -24,7 +38,11 @@ XmlRenderer.prototype = {
     renderXml(xmlString) {
         return parseXml(xmlString)
             .then((data) => {
-                prepData(data);
+                data = prepData(data);
+
+                // Enable extended receipts of the XML says to or if extended receipts are enabled.
+                data.isExtended = !!(data.isExtended || this.extendedReceipts);
+
                 return this.renderTemplateWithData(data);
             });
     },

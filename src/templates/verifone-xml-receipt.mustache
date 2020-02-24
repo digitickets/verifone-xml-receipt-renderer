@@ -27,7 +27,6 @@
     text-align: center;
 }
 
-/* Clear floats */
 .verifone-receipt p:after {
     content: "";
     clear: both;
@@ -42,7 +41,6 @@
     text-align: right;
 }
 
-/* Label on the left. Using a <span> tag makes it go funky when resized. At least in Chrome's responsive device mode */
 .verifone-receipt p span {
     float: left;
 }
@@ -239,7 +237,7 @@
 
     <hr />
 
-    {{#ExtendedReceipt}}
+    {{#isExtended}}
         <p class="right">
             <span>AppExp:</span>
             {{AppExp}}
@@ -354,7 +352,7 @@
         </p>
 
         <hr />
-    {{/ExtendedReceipt}}
+    {{/isExtended}}
 
     {{#Footer}}
         <h3>{{Footer}}</h3>

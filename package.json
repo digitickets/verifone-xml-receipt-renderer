@@ -1,6 +1,6 @@
 {
   "name": "@digitickets/verifone-xml-receipt-renderer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert XML from Verifone Chip and Pin terminals to HTML receipts.",
   "main": "src/index.js",
   "scripts": {
