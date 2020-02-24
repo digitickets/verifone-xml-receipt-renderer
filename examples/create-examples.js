@@ -8,6 +8,9 @@ const XmlRenderer = require('../src/index');
  */
 const renderer = new XmlRenderer();
 
+// Change this to true to test extended receipts.
+renderer.setExtendedReceipts(false);
+
 const inputDir = path.join(__dirname, 'input');
 const outputDir = path.join(__dirname, 'output');
 
