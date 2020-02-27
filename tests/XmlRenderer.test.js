@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const XmlRenderer = require('../src/XmlRenderer');
+const templateString = require('../src/templates/verifone-xml-receipt.js');
 
 describe('XmlRenderer', () => {
     /**
@@ -23,7 +24,7 @@ describe('XmlRenderer', () => {
 
     describe('renderXml', () => {
         beforeEach(() => {
-            xmlRenderer.setTemplateString(fs.readFileSync(path.join(__dirname, '../src/templates/verifone-xml-receipt.mustache')).toString());
+            xmlRenderer.setTemplateString(templateString);
         });
 
         it('Should have signature line on merchant swipe receipt', () => {
@@ -41,6 +42,15 @@ describe('XmlRenderer', () => {
                 .then((result) => {
                     expect(result).not.toMatch(/class="signature-box"/);
                     expect(result).not.toMatch(/please sign below/i);
+                });
+        });
+
+        it('Should display cashback and gratuity', () => {
+            const xml = fs.readFileSync(path.resolve(__dirname, '../examples/input/icc-chip-and-pin-authorized-customer-cashback-gratuity.xml'));
+            return xmlRenderer.renderXml(xml)
+                .then((result) => {
+                    expect(result).toMatch(/Gratuity.*?£6\.00/s);
+                    expect(result).toMatch(/Cashback.*?£20\.00/s);
                 });
         });
 

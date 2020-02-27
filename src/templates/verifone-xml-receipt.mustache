@@ -110,6 +110,20 @@
         </p>
     {{/Amount}}
 
+    {{#Gratuity}}
+        <p class="right">
+            <span>Gratuity:</span>
+            {{CurrencySymbol}}{{Gratuity}}
+        </p>
+    {{/Gratuity}}
+
+    {{#Cashback}}
+        <p class="right">
+            <span>Cashback:</span>
+            {{CurrencySymbol}}{{Cashback}}
+        </p>
+    {{/Cashback}}
+
     {{#Total}}
         <p class="right">
             <span><strong>TOTAL:</strong></span>
