@@ -77,12 +77,14 @@
         <p>{{PAN}}</p>
     {{/PAN}}
 
-    {{#formattedExpiryDate}}
-        <p class="right">
-            <span>Expiry:</span>
-            {{formattedExpiryDate}}
-        </p>
-    {{/formattedExpiryDate}}
+    {{#isMerchant}}
+        {{#formattedExpiryDate}}
+            <p class="right">
+                <span>Expiry:</span>
+                {{formattedExpiryDate}}
+            </p>
+        {{/formattedExpiryDate}}
+    {{/isMerchant}}
 
     {{#IssueNo}}
         <p class="right">
