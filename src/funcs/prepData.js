@@ -62,6 +62,7 @@ const splitDateTimeString = (str) => {
 const prepData = (data) => {
     data.isMerchant = isMerchant(data.ReceiptType);
     data.isCustomer = isCustomer(data.ReceiptType);
+    data.formattedStartDate = data.StartDate ? formatExpiryDate(data.StartDate) : null;
     data.formattedExpiryDate = data.ExpiryDate ? formatExpiryDate(data.ExpiryDate) : null;
     data.showSignatureLine = showSignatureLine(data);
 

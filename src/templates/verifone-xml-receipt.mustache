@@ -78,6 +78,12 @@
     {{/PAN}}
 
     {{#isMerchant}}
+        {{#formattedStartDate}}
+            <p class="right">
+                <span>Start:</span>
+                {{formattedStartDate}}
+            </p>
+        {{/formattedStartDate}}
         {{#formattedExpiryDate}}
             <p class="right">
                 <span>Expiry:</span>
