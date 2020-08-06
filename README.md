@@ -11,7 +11,7 @@ It's up to us to take that XML and produce a card receipt from it. This package 
 ## Install
 
     npm i @digitickets/verifone-xml-receipt-renderer --save
-    
+
 ## Use
 
 ```javascript
@@ -21,19 +21,27 @@ const xmlRenderer = new XmlRenderer();
 xmlRenderer.renderXml(xml)
     .then((html) => {
         // Do what you've gotta do to print it.
-        console.log('html', html);    
+        console.log('html', html);
     });
 ```
+
+## Development
+
+If you modify the `verifone-xml-receipt.mustache` template you need to run:
+
+    npm run build
+
+To update the compiled javascript template.
 
 ## Examples
 In the `examples/input` directory are all the XML examples taken from the integration guide "Ocius Payment Application Solution Integration Specification v2.5 - 11th September 2019.pdf".
 
 Checkout this repository, `npm install` then run:
-    
+
     npm run create-examples
-    
+
 to convert these examples into HTML. They will be placed in the `examples/output` directory.
- 
+
 ![](https://i.imgur.com/tQz8A7u.png)
 
 The receipts look like this:
