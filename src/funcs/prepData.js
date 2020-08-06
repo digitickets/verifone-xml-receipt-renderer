@@ -66,6 +66,9 @@ const prepData = (data) => {
     data.formattedExpiryDate = data.ExpiryDate ? formatExpiryDate(data.ExpiryDate) : null;
     data.showSignatureLine = showSignatureLine(data);
 
+    data.showGratutiy = parseFloat(data.Gratuity) > 0;
+    data.showCashback = parseFloat(data.Cashback) > 0;
+
     // Split up the date and time. But only display these if they are both present.
     // Otherwise fall back to displaying the string as given.
     const { date, time } = splitDateTimeString(data.TxnDateTime);
