@@ -57,7 +57,7 @@ const splitDateTimeString = (str) => {
  * Accepts an object of data and adds a bunch of extra properties to help with rendering it.
  *
  * @param {object} data
- * @return {{ isMerchant: boolean, isCustomer: boolean, formattedExpiryDate: string, isExtended: boolean }}
+ * @return {{ isMerchant: boolean, isCustomer: boolean, formattedExpiryDate: string, isExtended: boolean, showRegistrationResult: boolean }}
  */
 const prepData = (data) => {
     data.isMerchant = isMerchant(data.ReceiptType);
@@ -78,6 +78,13 @@ const prepData = (data) => {
 
     // Print extended receipt if either the XML tells us to, or it was enabled in XmlRenderer.
     data.isExtended = data.ExtendedReceipt;
+
+    data.showRegistrationResult = !!(
+        // Always print it on an extended receipt if it exists.
+        (data.hasOwnProperty('TokenRegistrationResult') && data.ExtendedReceipt)
+        // Otherwise only print it if not empty and not not performed.
+        || (data.TokenRegistrationResult && data.TokenRegistrationResult !== 'Registration not performed')
+    );
 
     return data;
 };

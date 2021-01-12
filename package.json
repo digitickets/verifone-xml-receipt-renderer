@@ -27,7 +27,7 @@
     "mustache": "^4.0.0"
   },
   "devDependencies": {
-    "@digitickets/eslint-config-digitickets": "^1.0.15",
+    "@digitickets/eslint-config-digitickets": "^1.0.23",
     "jest": "^25.1.0",
     "rimraf": "^3.0.1"
   }

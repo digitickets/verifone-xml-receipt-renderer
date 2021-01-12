@@ -16,7 +16,7 @@ describe('prepData', () => {
                 const result = prepData({ ReceiptType });
                 expect(result.isMerchant).toBe(isMerchant);
                 expect(result.isCustomer).toBe(isCustomer);
-            }
+            },
         );
     });
 
@@ -46,7 +46,7 @@ describe('prepData', () => {
             (data, expected) => {
                 const result = prepData(data);
                 expect(result.showSignatureLine).toBe(expected);
-            }
+            },
         );
     });
 
@@ -62,7 +62,7 @@ describe('prepData', () => {
                 ['', null, null, false],
                 [null, null, null, false],
                 ['                   ', null, null, false],
-            ]
+            ],
         )(
             'Should split date and time with format (%s)',
             (TxnDateTime, expectedDate, expectedTime, showSeparateDateTime) => {
@@ -70,7 +70,54 @@ describe('prepData', () => {
                 expect(result.date).toBe(expectedDate);
                 expect(result.time).toBe(expectedTime);
                 expect(result.showSeparateDateTime).toBe(showSeparateDateTime);
-            }
+            },
         );
+    });
+
+    describe('showRegistrationResult', () => {
+        it('Should not show result if no TokenRegistrationResult', () => {
+            const data = prepData({});
+            expect(data.showRegistrationResult).toBe(false);
+        });
+
+        it('Should not show result if no TokenRegistrationResult and extended receipt is on', () => {
+            const data = prepData({ ExtendedReceipt: true });
+            expect(data.showRegistrationResult).toBe(false);
+        });
+
+        it('Should not show result if TokenRegistrationResult is null', () => {
+            const data = prepData({ TokenRegistrationResult: null });
+            expect(data.showRegistrationResult).toBe(false);
+        });
+
+        it('Should show result if TokenRegistrationResult is null and extended receipt is on', () => {
+            const data = prepData({ TokenRegistrationResult: null, ExtendedReceipt: true });
+            expect(data.showRegistrationResult).toBe(true);
+        });
+
+        it('Should not show result if TokenRegistrationResult is empty', () => {
+            const data = prepData({ TokenRegistrationResult: '' });
+            expect(data.showRegistrationResult).toBe(false);
+        });
+
+        it('Should show result if TokenRegistrationResult is empty and extended receipt is on', () => {
+            const data = prepData({ TokenRegistrationResult: '', ExtendedReceipt: true });
+            expect(data.showRegistrationResult).toBe(true);
+        });
+
+        it('Should not show result if TokenRegistrationResult is not performed', () => {
+            const data = prepData({ TokenRegistrationResult: 'Registration not performed' });
+            expect(data.showRegistrationResult).toBe(false);
+        });
+
+        it('Should show result if TokenRegistrationResult is not performed and extended receipt is on', () => {
+            const data = prepData({ TokenRegistrationResult: 'Registration not performed', ExtendedReceipt: true });
+            expect(data.showRegistrationResult).toBe(true);
+        });
+
+        it('Should show result if TokenRegistrationResult is performed', () => {
+            const data = prepData({ TokenRegistrationResult: 'Registration performed' });
+            expect(data.showRegistrationResult).toBe(true);
+        });
     });
 });
