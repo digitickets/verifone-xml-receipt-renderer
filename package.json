@@ -18,6 +18,7 @@
     "email": "support@digitickets.co.uk"
   },
   "license": "MIT",
+  "private": false,
   "bugs": {
     "url": "https://github.com/digitickets/verifone-xml-receipt-renderer/issues"
   },
