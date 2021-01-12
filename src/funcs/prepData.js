@@ -72,7 +72,7 @@ const prepData = (data) => {
     data.time = time;
     data.showSeparateDateTime = !!(data.date && data.time);
 
-    // Print extended receipt if either the XML tells us to, or
+    // Print extended receipt if either the XML tells us to, or it was enabled in XmlRenderer.
     data.isExtended = data.ExtendedReceipt;
 
     return data;
