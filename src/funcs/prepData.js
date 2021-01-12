@@ -62,8 +62,12 @@ const splitDateTimeString = (str) => {
 const prepData = (data) => {
     data.isMerchant = isMerchant(data.ReceiptType);
     data.isCustomer = isCustomer(data.ReceiptType);
+    data.formattedStartDate = data.StartDate ? formatExpiryDate(data.StartDate) : null;
     data.formattedExpiryDate = data.ExpiryDate ? formatExpiryDate(data.ExpiryDate) : null;
     data.showSignatureLine = showSignatureLine(data);
+
+    data.showGratutiy = parseFloat(data.Gratuity) > 0;
+    data.showCashback = parseFloat(data.Cashback) > 0;
 
     // Split up the date and time. But only display these if they are both present.
     // Otherwise fall back to displaying the string as given.

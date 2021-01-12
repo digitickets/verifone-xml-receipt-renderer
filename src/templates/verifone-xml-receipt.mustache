@@ -6,7 +6,7 @@
     text-align: left;
     font-family: "Lucida Console", Monaco, monospace;
     font-weight: normal;
-    font-size: 11px;
+    font-size: 12px;
     word-break: break-all;
 }
 
@@ -77,12 +77,20 @@
         <p>{{PAN}}</p>
     {{/PAN}}
 
-    {{#formattedExpiryDate}}
-        <p class="right">
-            <span>Expiry:</span>
-            {{formattedExpiryDate}}
-        </p>
-    {{/formattedExpiryDate}}
+    {{#isMerchant}}
+        {{#formattedStartDate}}
+            <p class="right">
+                <span>Start:</span>
+                {{formattedStartDate}}
+            </p>
+        {{/formattedStartDate}}
+        {{#formattedExpiryDate}}
+            <p class="right">
+                <span>Expiry:</span>
+                {{formattedExpiryDate}}
+            </p>
+        {{/formattedExpiryDate}}
+    {{/isMerchant}}
 
     {{#IssueNo}}
         <p class="right">
@@ -110,19 +118,19 @@
         </p>
     {{/Amount}}
 
-    {{#Gratuity}}
+    {{#showGratutiy}}
         <p class="right">
             <span>Gratuity:</span>
             {{CurrencySymbol}}{{Gratuity}}
         </p>
-    {{/Gratuity}}
+    {{/showGratutiy}}
 
-    {{#Cashback}}
+    {{#showCashback}}
         <p class="right">
             <span>Cashback:</span>
             {{CurrencySymbol}}{{Cashback}}
         </p>
-    {{/Cashback}}
+    {{/showCashback}}
 
     {{#Total}}
         <p class="right">
