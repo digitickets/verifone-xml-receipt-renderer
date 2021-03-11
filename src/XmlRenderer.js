@@ -3,6 +3,9 @@ const { compileMustacheTemplate } = require('./funcs/compileTemplate');
 const { parseXml } = require('./funcs/parseXml');
 const { prepData } = require('./funcs/prepData');
 
+/**
+ * @constructor
+ */
 const XmlRenderer = function () {
     /**
      * The mustache template to use to render the receipts.
