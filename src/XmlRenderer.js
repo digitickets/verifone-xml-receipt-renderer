@@ -18,9 +18,37 @@ const XmlRenderer = function () {
      * @type {boolean}
      */
     this.extendedReceipts = false;
+
+    /**
+     * Additional text (HTML) to add to the top of every receipt.
+     *
+     * @type {string}
+     */
+    this.customHeader = '';
+
+    /**
+     * Additional text (HTML) to add to the bottom of every receipt.
+     *
+     * @type {string}
+     */
+    this.customFooter = '';
 };
 
 XmlRenderer.prototype = {
+    /**
+     * @param {string} value
+     */
+    setCustomHeader(value) {
+        this.customHeader = value || '';
+    },
+
+    /**
+     * @param {string} value
+     */
+    setCustomFooter(value) {
+        this.customFooter = value || '';
+    },
+
     /**
      * @param {boolean} value
      */
@@ -42,6 +70,9 @@ XmlRenderer.prototype = {
 
                 // Enable extended receipts of the XML says to or if extended receipts are enabled.
                 data.isExtended = !!(data.isExtended || this.extendedReceipts);
+
+                data.customHeader = this.customHeader;
+                data.customFooter = this.customFooter;
 
                 return this.renderTemplateWithData(data);
             });

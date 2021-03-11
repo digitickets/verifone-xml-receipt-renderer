@@ -11,6 +11,9 @@ const renderer = new XmlRenderer();
 // Change this to true to test extended receipts.
 renderer.setExtendedReceipts(false);
 
+renderer.setCustomHeader('<p>Hello <strong>World</strong></p>');
+renderer.setCustomFooter('<p>Goodbye <strong>World</strong></p>');
+
 const inputDir = path.join(__dirname, 'input');
 const outputDir = path.join(__dirname, 'output');
 
