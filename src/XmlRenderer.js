@@ -64,9 +64,10 @@ XmlRenderer.prototype = {
      * Returns a string of HTML.
      *
      * @param {string} xmlString
+     * @param {object} mergeData Additional data to add to the data sent to the template. Will overwrite existing values.
      * @return {Promise<string>}
      */
-    renderXml(xmlString) {
+    renderXml(xmlString, mergeData) {
         return parseXml(xmlString)
             .then((data) => {
                 data = prepData(data);
@@ -76,6 +77,8 @@ XmlRenderer.prototype = {
 
                 data.customHeader = this.customHeader;
                 data.customFooter = this.customFooter;
+
+                Object.assign(data, mergeData);
 
                 return this.renderTemplateWithData(data);
             });
